@@ -64,6 +64,16 @@ flutter:
     - p/pixel.png
     - p/uno.png
     - p/unopins.png
+    - p/WeMos-D1-mini.png
+    - p/ESP8266-WeMos-D1-Mini-pinout.png
+    - p/nodemcu.png
+    - p/ESP8266-NodeMCU-pin.png
+    - p/ESP-01-ESP8266-pin.png
+    - p/esp8266.png
+    - p/Arduino_Leonardo.png
+    - p/leonardo_pin.png
+  
+    
    
 
   # An image asset can refer to one or more resolution-specific "variants", see

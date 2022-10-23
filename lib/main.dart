@@ -17,19 +17,14 @@ class Product {
         "podstawowe rozwiązanie dla większości porjektów",
         "uno.png",
         "unopins.png"));
-    items.add(Product("Laptop", "Laptop is most productive development tool",
-        "uno.svg", "pixel.png"));
-    items.add(Product(
-        "Tablet",
-        "Tablet is the most useful device ever for meeting",
-        "tablet.png",
-        "pixel.png"));
-    items.add(Product("Pendrive", "iPhone is the stylist phone ever", "led.png",
-        "pixel.png"));
-    items.add(Product("Floppy Drive", "iPhone is the stylist phone ever",
-        "floppy.png", "pixel.png"));
-    items.add(Product("iPhone", "iPhone is the stylist phone ever",
-        "iphone.png", "pixel.png"));
+    items.add(Product("Arduino Leonardo", "Leonardo", "Arduino_Leonardo.png",
+        "leonardo_pin.png"));
+    items.add(Product("ESP8266", "Compact and usefull", "esp8266.png",
+        "ESP-01-ESP8266-pin.png"));
+    items.add(Product("Node MCU", "Wifi module with 10 GPIO adn 4MB flash",
+        "nodemcu.png", "ESP8266-NodeMCU-pin.png"));
+    items.add(Product("Wemos D1 mini", "3.3V Wifi module", "WeMos-D1-mini.png",
+        "ESP8266-WeMos-D1-Mini-pinout.png"));
     return items;
   }
 }
