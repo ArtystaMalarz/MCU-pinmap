@@ -14,17 +14,26 @@ class Product {
     List<Product> items = <Product>[];
     items.add(Product(
         "Arduino UNO",
-        "podstawowe rozwiązanie dla większości porjektów",
+        "Basic Arduino with 32 kB Flash, 2 kB RAM, 14 digital and 6 analog GPIO ",
         "uno.png",
         "unopins.png"));
-    items.add(Product("Arduino Leonardo", "Leonardo", "Arduino_Leonardo.png",
+    items.add(Product(
+        "Arduino Leonardo",
+        "Leonardo has 32 kB Flash, 2,5 kB RAM, 20 digital and 12 analog GPIO",
+        "Arduino_Leonardo.png",
         "leonardo_pin.png"));
-    items.add(Product("ESP8266", "Compact and usefull", "esp8266.png",
+    items.add(Product(
+        "ESP8266",
+        "3.3V WiFi module with 1MB Flash with 2 GPIO and UART interface",
+        "esp8266.png",
         "ESP-01-ESP8266-pin.png"));
-    items.add(Product("Node MCU", "Wifi module with 10 GPIO adn 4MB flash",
-        "nodemcu.png", "ESP8266-NodeMCU-pin.png"));
-    items.add(Product("Wemos D1 mini", "3.3V Wifi module", "WeMos-D1-mini.png",
-        "ESP8266-WeMos-D1-Mini-pinout.png"));
+    items.add(Product(
+        "Node MCU",
+        "Wifi module with 4MB Flash 160kB RAM and 10 GPIO",
+        "nodemcu.png",
+        "ESP8266-NodeMCU-pin.png"));
+    items.add(Product("Wemos D1 mini", "Wemos D1 mini has 4MB Flash and 9 GPIO",
+        "WeMos-D1-mini.png", "ESP8266-WeMos-D1-Mini-pinout.png"));
     return items;
   }
 }
@@ -89,17 +98,15 @@ class ProductPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Image.asset("p/" + this.item.pinmap,
-                    width: 400, height: 325, fit: BoxFit.fill),
+                    width: 400, height: 400, fit: BoxFit.contain),
                 Expanded(
                     child: Container(
                         padding: EdgeInsets.all(5),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             //Text(this.item.name,
-                            Text(
-                                "Wyprowadzenie pinów dla płytki " +
-                                    this.item.name,
+                            Text("Pinout diagram for " + this.item.name,
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                             //Text(this.item.description),
                             // Text("Price: " + this.item.price.toString()),
@@ -170,7 +177,8 @@ class ProductBox extends StatelessWidget {
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Image.asset("p/" + item.image),
+                Image.asset("p/" + item.image,
+                    width: 200, height: 200, fit: BoxFit.contain),
                 Expanded(
                     child: Container(
                         padding: EdgeInsets.all(5),
@@ -188,116 +196,3 @@ class ProductBox extends StatelessWidget {
         ));
   }
 }
-
-/*import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Quality management',
-        theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          primarySwatch: Colors.blue,
-        ),
-        home: MyHomePage(title: "QMS"));
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: const Center(
-        child: Text('My Page!'),
-      ),
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Dostępne narzędzia'),
-            ),
-            ListTile(
-              title: const Text('Raport 8D'),
-              onTap: () {
-                // Update the state of the app
-                body:
-                Center(child: Icon(Icons.email));
-                title:
-                const Text('First Route');
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class kalkulator extends StatefulWidget {
-  const kalkulator({super.key});
-
-  @override
-  State<kalkulator> createState() => _kalkulatorState();
-}
-
-class _kalkulatorState extends State<kalkulator> {
-  final _biggerFont = const TextStyle(fontSize: 18);
-  final _wynik = "aaaa";
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // NEW from here ...
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text('Open route'),
-        ),
-      ),
-    );
-  }
-}
-*/
