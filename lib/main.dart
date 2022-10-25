@@ -34,11 +34,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'MCU_Pinmap',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Pinmap dla Arduino'),
+      home: MyHomePage(title: 'Pinmap for Arduino'),
     );
   }
 }
@@ -97,7 +97,9 @@ class ProductPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             //Text(this.item.name,
-                            Text("Wyprowadzenie pinów Arduino UNO",
+                            Text(
+                                "Wyprowadzenie pinów dla płytki " +
+                                    this.item.name,
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                             //Text(this.item.description),
                             // Text("Price: " + this.item.price.toString()),
